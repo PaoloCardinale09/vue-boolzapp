@@ -2,14 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      http-equiv="X-UA-Compatible"
-      content="IE=edge"
-    />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vue-boolzapp</title>
     <!-- BOOTSTRAP -->
     <link
@@ -29,23 +23,188 @@
     />
 
     <!-- STYLE -->
-    <link
-      rel="stylesheet"
-      href="./css/style.css"
-    />
+    <link rel="stylesheet" href="./css/style.css" />
 
     <!-- VUE JS -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <!-- APP JS -->
-    <script
-      type="text/javascript"
-      src="./js/main.js"
-      defer
-    ></script>
+    <script type="text/javascript" src="./js/main.js" defer></script>
   </head>
 
   <body>
-    <div id="app">{{message}}</div>
+    <header id="body-header">
+      <div id="app">
+        <div class="container">
+          <main class="d-flex">
+            <!-- START MAIN -->
+
+            <aside>
+              <!-- START ASIDE -->
+
+              <!---------- ASIDE HEADER --------->
+              <header
+                id="aside-header"
+                class="d-flex justify-content-between align-items-center"
+              >
+                <div class="d-flex h-100">
+                  <div class="wrapper-avatar px-2">
+                    <img
+                      src="./img/avatar_1.jpg"
+                      alt="avatar"
+                      class="h-100 rounded-circle p-1"
+                    />
+                  </div>
+                  <div
+                    class="wrapper-info d-flex flex-column align-self-center"
+                  >
+                    <span class="">Michele</span>
+                  </div>
+                </div>
+                <div class="me-2">
+                  <span>&hearts;</span>
+                  <span>&hearts;</span>
+                  <span>&hearts;</span>
+                </div>
+              </header>
+              <!---------- END ASIDE HEADER --------->
+
+              <!---------- START MAIN ASIDE --------->
+              <div id="notification-center">
+                <div class="d-flex h-100">
+                  <div class="wrapper-avatar px-2 align-self-center">
+                    <div class="h-100 rounded-circle p-1">
+                      <i
+                        id="bell"
+                        class="fa-solid fa-bell-slash h4 bg-light rounded-circle p-3"
+                      ></i>
+                    </div>
+                    <!-- <img
+                      src="./img/avatar_1.jpg"
+                      alt="avatar"
+                      class="h-100 rounded-circle p-1"
+                    /> -->
+                  </div>
+                  <div
+                    class="wrapper-info d-flex flex-column align-self-center px-3 h-100"
+                  >
+                    <span class="">Ricevi notifiche di nuovi messaggi</span>
+                    <p class="fw-light text-secondary fs-6">
+                      <u>Attiva notifiche desktop</u>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SEARCH BAR -->
+              <div class="input-group input-group-sm my-2 w-95 m-auto">
+                <span
+                  class="input-group-text bg-white"
+                  id="inputGroup-sizing-sm"
+                >
+                  <i class="fa-solid fa-magnifying-glass text-secondary"></i>
+                </span>
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm"
+                />
+              </div>
+
+              <!---------- LIST CHAT   ---------->
+              <div
+                id="chat-card"
+                class="d-flex justify-content-between align-items-center"
+              >
+                <div class="d-flex h-100">
+                  <div class="wrapper-avatar px-2">
+                    <img
+                      src="./img/avatar_1.jpg"
+                      alt="avatar"
+                      class="h-100 rounded-circle p-1"
+                    />
+                  </div>
+                  <div
+                    class="wrapper-info d-flex flex-column align-self-center px-3"
+                  >
+                    <span class="">Michele</span>
+                    <span class="fw-light text-secondary fs-6"
+                      >Ultimo messaggio inviato
+                    </span>
+                  </div>
+                </div>
+                <div class="align-self-start me-2">
+                  <span>12:00</span>
+                </div>
+              </div>
+            </aside>
+
+            <!-- MAIN CONTENT -->
+            <div id="main-content" class="">
+              <header
+                id="main-content-header"
+                class="d-flex justify-content-between align-items-center"
+              >
+                <div class="d-flex h-100">
+                  <div class="wrapper-avatar px-2">
+                    <img
+                      src="./img/avatar_1.jpg"
+                      alt="avatar"
+                      class="h-100 rounded-circle p-1"
+                    />
+                  </div>
+                  <div
+                    class="wrapper-info d-flex flex-column align-self-center px-3"
+                  >
+                    <span class="">Michele</span>
+                    <span class="fw-light text-secondary fs-6"
+                      >orario accesso</span
+                    >
+                  </div>
+                </div>
+                <div class="me-2">
+                  <span>&hearts;</span>
+                  <span>&hearts;</span>
+                  <span>&hearts;</span>
+                </div>
+              </header>
+              <div id="chat-main" class="pt-5">
+                <div class="container">
+                  <div class="row mx-5">
+                    <div class="col-5 py-2 sent rounded-3 mb-2">Lorem</div>
+
+                    <div class="col-5 offset-7 rounded-3 mb-2 py-2 received">
+                      Lorem ipsum dolorssda
+                    </div>
+                    <div class="col-5 offset-7 rounded-3 py-2 mb-2 received">
+                      Lorem ipsum dolor
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer
+                id="main-content-footer"
+                class="d-flex align-items-center justify-content-evenly"
+              >
+                <span>&hearts;</span>
+                <div
+                  class="input-group flex-nowrap justify-content-center w-75"
+                >
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Scrivi un messaggio"
+                    aria-label="Username"
+                    aria-describedby="addon-wrapping"
+                  />
+                </div>
+                <span>&hearts;</span>
+              </footer>
+            </div>
+          </main>
+        </div>
+      </div>
+    </header>
   </body>
 </html>

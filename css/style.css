@@ -1,0 +1,75 @@
+/* GENERICS */
+.w-95 {
+  width: 95%;
+}
+
+/* BODY */
+body {
+  background-color: #dbdbd2;
+}
+
+#body-header {
+  height: 5rem;
+  background-color: #009688;
+}
+
+/* MAIN */
+main {
+  transform: scale(0.9);
+}
+
+#chat-main {
+  height: calc(100% - 8rem);
+}
+#main-content-header {
+  height: 4rem;
+  width: 100%;
+  background-color: #eaeaea;
+}
+
+#main-content {
+  width: 65vw;
+  height: 100vh;
+  background-image: url("../img/mine.jpg");
+}
+
+#main-content-footer {
+  height: 4rem;
+  width: 100%;
+  background-color: #eaeaea;
+}
+
+/* ASIDE */
+aside {
+  width: 35vw;
+  height: 100vh;
+  background-color: white;
+}
+
+#aside-header {
+  height: 4rem;
+  background-color: #eaeaea;
+  border-right: 1px solid #dbdbdb;
+}
+#notification-center {
+  height: 5rem;
+  background-color: #8edafc;
+}
+
+#bell {
+  color: #8edafc;
+}
+
+#chat-card {
+  height: 5em;
+  border-top: 1px solid #dbdbdb;
+}
+
+/* DINAMIC CLASS */
+.sent {
+  background-color: white;
+}
+
+.received {
+  background-color: #d5f9ba;
+}

@@ -79,14 +79,9 @@
                         class="fa-solid fa-bell-slash h4 bg-light rounded-circle p-3"
                       ></i>
                     </div>
-                    <!-- <img
-                      src="./img/avatar_1.jpg"
-                      alt="avatar"
-                      class="h-100 rounded-circle p-1"
-                    /> -->
                   </div>
                   <div
-                    class="wrapper-info d-flex flex-column align-self-center px-3 h-100"
+                    class="wrapper-info d-flex flex-column align-self-center px-3 h-100 justify-content-center"
                   >
                     <span class="">Ricevi notifiche di nuovi messaggi</span>
                     <p class="fw-light text-secondary fs-6">
@@ -97,45 +92,50 @@
               </div>
 
               <!-- SEARCH BAR -->
-              <div class="input-group input-group-sm my-2 w-95 m-auto">
-                <span
-                  class="input-group-text bg-white"
-                  id="inputGroup-sizing-sm"
-                >
-                  <i class="fa-solid fa-magnifying-glass text-secondary"></i>
-                </span>
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="Sizing example input"
-                  aria-describedby="inputGroup-sizing-sm"
-                />
+              <div>
+                <div class="input-group input-group-sm my-2 w-95 m-auto">
+                  <span
+                    class="input-group-text bg-white"
+                    id="inputGroup-sizing-sm"
+                  >
+                    <i class="fa-solid fa-magnifying-glass text-secondary"></i>
+                  </span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-sm"
+                  />
+                </div>
               </div>
 
               <!---------- LIST CHAT   ---------->
-              <div
-                id="chat-card"
-                class="d-flex justify-content-between align-items-center"
-              >
-                <div class="d-flex h-100">
-                  <div class="wrapper-avatar px-2">
-                    <img
-                      src="./img/avatar_1.jpg"
-                      alt="avatar"
-                      class="h-100 rounded-circle p-1"
-                    />
+              <div id="wrapper-main-aside">
+                <div
+                  id="chat-card"
+                  class="d-flex justify-content-between align-items-center"
+                  v-for="(contact, contactIndex) in contacts"
+                >
+                  <div class="d-flex h-100">
+                    <div class="wrapper-avatar px-2">
+                      <img
+                        v-bind:src="'./img/avatar' + contacts[contactIndex].avatar +'.jpg' "
+                        alt="avatar"
+                        class="h-100 rounded-circle p-1"
+                      />
+                    </div>
+                    <div
+                      class="wrapper-info d-flex flex-column align-self-center px-3"
+                    >
+                      <span class="">{{contacts[contactIndex].name}}</span>
+                      <span class="fw-light text-secondary fs-6"
+                        >Ultimo messaggio inviato
+                      </span>
+                    </div>
                   </div>
-                  <div
-                    class="wrapper-info d-flex flex-column align-self-center px-3"
-                  >
-                    <span class="">Michele</span>
-                    <span class="fw-light text-secondary fs-6"
-                      >Ultimo messaggio inviato
-                    </span>
+                  <div class="align-self-start me-3">
+                    <span class="text-secondary">12:00</span>
                   </div>
-                </div>
-                <div class="align-self-start me-2">
-                  <span>12:00</span>
                 </div>
               </div>
             </aside>

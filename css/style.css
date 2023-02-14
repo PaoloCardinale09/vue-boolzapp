@@ -15,6 +15,7 @@ body {
 
 /* MAIN */
 main {
+  height: 100vh;
   transform: scale(0.9);
 }
 
@@ -42,7 +43,7 @@ main {
 /* ASIDE */
 aside {
   width: 35vw;
-  height: 100vh;
+  height: 100%;
   background-color: white;
 }
 
@@ -59,9 +60,13 @@ aside {
 #bell {
   color: #8edafc;
 }
+#wrapper-main-aside {
+  height: calc(100% - 12rem);
+  overflow: auto;
+}
 
 #chat-card {
-  height: 5em;
+  height: 5rem;
   border-top: 1px solid #dbdbdb;
 }
 

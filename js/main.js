@@ -166,6 +166,12 @@ const app = createApp({
           ],
         },
       ],
+
+      newMessage: {
+        text: "",
+        status: "",
+      },
+
       activeContact: 0,
     };
   },
@@ -174,20 +180,34 @@ const app = createApp({
     // SELEZIONO IL CLICK IL CONTATTO ATTIVO
     switchToContact(index) {
       this.activeContact = index;
-      console.log(index);
+      // console.log(index);
+    },
+
+    addMessage() {
+      const newMessageCopy = {
+        text: this.newMessage.text,
+        status: "sent",
+      };
+      console.log(newMessageCopy);
+      this.contacts[this.activeContact].messages.push(newMessageCopy);
+      // azzero testo di input dopo invocazione
+      this.newMessage.text = "";
+    },
+
+    autoReply() {
+      const myTimeout = setTimeout(this.autoReply, 1000);
+      const newMessageCopy = {
+        text: "ok",
+        status: "received",
+      };
+      this.contacts[this.activeContact].messages.push(newMessageCopy);
+      // console.log(this.newMessage.text);
     },
   },
 });
 
 app.mount("#app");
 
-// Boolzapp - a (not very) innovative messaging platform
-// Nome Repo: vue-boolzapp Milestone 1
-// ● Replica della grafica con la possibilità di avere messaggi scritti dall’utente (verdi) e dall’interlocutore (bianco) assegnando due classi CSS diverse
-// ● Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
-// Milestone 2
-// ● Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i messaggi relativi al contatto attivo all’interno del pannello della conversazione
-// ● Click sul contatto mostra la conversazione del contatto cliccato
 // Milestone 3
 // ● Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando
 // “enter” il testo viene aggiunto al thread sopra, come messaggio verde

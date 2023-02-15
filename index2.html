@@ -147,6 +147,8 @@
           </div>
           <div class="flex-grow-1">
             <input
+              @keyUp.enter="addMessage()"
+              v-model="newMessage.text"
               type="text"
               placeholder="Scrivi un messaggio"
               class="send-message-input px-4 p-2"
@@ -155,6 +157,7 @@
           <div class="d-flex align-items-center icons px-4 py-2">
             <i class="fa-solid fa-microphone mx-2"></i>
           </div>
+          <button @click="autoReply">dsaf</button>
         </footer>
       </section>
     </div>

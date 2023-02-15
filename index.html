@@ -170,15 +170,20 @@
                 </div>
               </header>
               <div id="chat-main" class="pt-5">
-                <div class="container">
-                  <div class="row mx-5">
-                    <div class="col-5 py-2 sent rounded-3 mb-2">Lorem</div>
+                <div class="container h-100">
+                  <div class="row mx-5 h-100 overflow-auto">
+                    <!-- MESSAGGI MANDATI SENT -->
+                    <div
+                      v-for="(message, messageIndex) in contacts[1].messages"
+                      class="col-5 py-2 sent rounded-3 mb-2 me-super"
+                    >
+                      <!-- {{contacts[contactIndex].messages[textIndex].text}} -->{{
+                      message.text }}
+                    </div>
 
+                    <!-- MESSAGGI RICEVUTI RECEIVED -->
                     <div class="col-5 offset-7 rounded-3 mb-2 py-2 received">
                       Lorem ipsum dolorssda
-                    </div>
-                    <div class="col-5 offset-7 rounded-3 py-2 mb-2 received">
-                      Lorem ipsum dolor
                     </div>
                   </div>
                 </div>

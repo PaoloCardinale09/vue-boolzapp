@@ -166,10 +166,17 @@ const app = createApp({
           ],
         },
       ],
+      activeContact: 0,
     };
   },
 
-  methods: {},
+  methods: {
+    // SELEZIONO IL CLICK IL CONTATTO ATTIVO
+    switchToContact(index) {
+      this.activeContact = index;
+      console.log(index);
+    },
+  },
 });
 
 app.mount("#app");

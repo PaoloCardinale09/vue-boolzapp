@@ -3,9 +3,14 @@
   width: 95%;
 }
 
+.me-super {
+  margin-right: 8rem;
+}
+
 /* BODY */
 body {
   background-color: #dbdbd2;
+  height: 100vh;
 }
 
 #body-header {

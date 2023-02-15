@@ -192,16 +192,23 @@ const app = createApp({
       this.contacts[this.activeContact].messages.push(newMessageCopy);
       // azzero testo di input dopo invocazione
       this.newMessage.text = "";
+
+      // setTimeout(() => {
+      //   this.contacts[this.activeContact].messages.push({
+      //     text: "ok",
+      //     status: "received",
+      //   });
+      // }, 1000);
     },
 
     autoReply() {
-      const myTimeout = setTimeout(this.autoReply, 1000);
-      const newMessageCopy = {
-        text: "ok",
-        status: "received",
-      };
-      this.contacts[this.activeContact].messages.push(newMessageCopy);
-      // console.log(this.newMessage.text);
+      setTimeout(() => {
+        const newMessageCopy = {
+          text: "ok",
+          status: "received",
+        };
+        this.contacts[this.activeContact].messages.push(newMessageCopy);
+      }, 1000);
     },
   },
 });

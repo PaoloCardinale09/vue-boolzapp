@@ -34,7 +34,8 @@
     <link rel="stylesheet" href="./css/style2.css" />
 
     <!-- VUE JS -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.min.js"></script>
 
     <!-- APP JS -->
     <script type="text/javascript" src="./js/main.js" defer></script>
@@ -74,13 +75,12 @@
             <i class="fa-solid fa-magnifying-glass mx-2"></i>
           </div>
           <input
-            @keyup.enter="searchContact(controlLetter)"
+            @keyUp="searchContact(controlLetter)"
             v-model="controlLetter"
             class="p-2"
             type="text"
             placeholder="Cerca o inizia una nuova chat"
           />
-          <p>{{controlLetter}}</p>
         </div>
         <!-- <button @click="searchContact(contactIndex) ">try</button> -->
 

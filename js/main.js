@@ -214,16 +214,15 @@ const app = createApp({
     },
 
     searchContact(letter) {
-      console.log(letter);
-      if (this.contacts[this.activeContact].name.includes(letter)) {
-        console.log("si ci sta" + this.activeContact);
-        this.contacts[this.activeContact].visible = true;
-      } else {
-        this.contacts[this.activeContact].visible = false;
-        // console.log(this.contacts[this.activeContact].name);
-        console.log("non ci sta");
-        console.log(this.activeContact);
-      }
+      this.contacts.forEach((num, index) => {
+        // console.log(index);
+        this.activeContact = index;
+        if (this.contacts[index].name.toLowerCase().includes(letter)) {
+          this.contacts[this.activeContact].visible = true;
+        } else {
+          this.contacts[this.activeContact].visible = false;
+        }
+      });
     },
   },
 });

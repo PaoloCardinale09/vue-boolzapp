@@ -183,3 +183,7 @@ body {
 .send-message-input {
   width: 100%;
 }
+
+.d-flex-personal {
+  display: flex;
+}

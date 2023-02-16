@@ -74,18 +74,23 @@
             <i class="fa-solid fa-magnifying-glass mx-2"></i>
           </div>
           <input
+            @keyup.enter="searchContact(controlLetter)"
+            v-model="controlLetter"
             class="p-2"
             type="text"
             placeholder="Cerca o inizia una nuova chat"
           />
+          <p>{{controlLetter}}</p>
         </div>
+        <!-- <button @click="searchContact(contactIndex) ">try</button> -->
 
         <!-- LIST CONTACTS -->
         <ul class="list-contacts flex-grow-1 m-0 p-0">
           <li
             @click="switchToContact(contactIndex)"
-            class="list-contacts--contact contact--active d-flex p-2"
+            class="list-contacts--contact contact--active d-flex-personal p-2"
             v-for="(contact, contactIndex) in contacts"
+            v-show="contacts[contactIndex].visible "
           >
             <div class="contact--left d-flex flex-grow-1">
               <img
@@ -157,7 +162,6 @@
           <div class="d-flex align-items-center icons px-4 py-2">
             <i class="fa-solid fa-microphone mx-2"></i>
           </div>
-          <button @click="autoReply()">dsaf</button>
         </footer>
       </section>
     </div>

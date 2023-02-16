@@ -173,6 +173,8 @@ const app = createApp({
       },
 
       activeContact: 0,
+
+      controlLetter: "",
     };
   },
 
@@ -210,16 +212,23 @@ const app = createApp({
         this.contacts[this.activeContact].messages.push(newMessageCopy);
       }, 1000);
     },
+
+    searchContact(letter) {
+      console.log(letter);
+      if (this.contacts[this.activeContact].name.includes(letter)) {
+        console.log("si ci sta" + this.activeContact);
+        this.contacts[this.activeContact].visible = true;
+      } else {
+        this.contacts[this.activeContact].visible = false;
+        // console.log(this.contacts[this.activeContact].name);
+        console.log("non ci sta");
+        console.log(this.activeContact);
+      }
+    },
   },
 });
 
 app.mount("#app");
-
-// Milestone 3
-// ● Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando
-// “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-// ● Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà
-// un “ok” come risposta, che apparirà dopo 1 secondo.
 
 // Milestone 4
 // ● Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati solo i contatti il cui nome contiene le lettere inserite (es, Marco, Matteo Martina -> Scrivo “mar” rimangono solo Marco e Martina)

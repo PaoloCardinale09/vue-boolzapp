@@ -206,7 +206,7 @@ const app = createApp({
     autoReply() {
       setTimeout(() => {
         const newMessageCopy = {
-          text: "ok",
+          text: "ok!",
           status: "received",
         };
         this.contacts[this.activeContact].messages.push(newMessageCopy);

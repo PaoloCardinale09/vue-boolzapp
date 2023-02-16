@@ -88,7 +88,8 @@
         <ul class="list-contacts flex-grow-1 m-0 p-0">
           <li
             @click="switchToContact(contactIndex)"
-            class="list-contacts--contact contact--active d-flex-personal p-2"
+            :class="contactIndex== activeContact ? 'contact--active' : ''"
+            class="list-contacts--contact d-flex-personal p-2"
             v-for="(contact, contactIndex) in contacts"
             v-show="contacts[contactIndex].visible "
           >
@@ -100,7 +101,9 @@
               />
               <p class="my-0 mx-2">
                 {{contacts[contactIndex].name}}<br />
-                <span class="latest-access">Ultimo messaggio inviato</span>
+                <span class="latest-access" v-if="contact.messages.length"></span>
+                  {{contact.messages[contact.messages.length -1].text}}
+                </span>
               </p>
             </div>
             <h1></h1>
@@ -132,7 +135,7 @@
         </header>
 
         <!-- MAIN CHAT -->
-        <div class="main-chat flex-grow-1 d-flex flex-column align-items-start">
+        <div class="main-chat flex-grow-1 d-flex flex-column align-items-start py-2 px-4">
           <!-- TERNIARIO CHE MI DICE DI AGGIUNGERRE CLASSA SENT
           O RECEIVED IN BASE ALLO STATUS -->
           <div
